@@ -123,12 +123,6 @@
   version "7.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.0.0-rc.1.tgz#d009a9bba8175d7b971e30cd03535b278c44082d"
 
-"@babel/plugin-syntax-dynamic-import@^7.0.0-rc.1":
-  version "7.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.0.0-rc.1.tgz#9bf26d934b968c327e262ecf3a39729bcdec7419"
-  dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-rc.1"
-
 "@babel/plugin-transform-modules-commonjs@^7.0.0-rc.1":
   version "7.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.0.0-rc.1.tgz#475bd3e6c3b86bb38307f715e0cbdb6cb2f431c2"
