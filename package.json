@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-experimental-syntax-dynamic-import",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "plugin of automate default access at dynamic import",
   "scripts": {
     "start": "abby format, test --watch \"*.mjs\"",
