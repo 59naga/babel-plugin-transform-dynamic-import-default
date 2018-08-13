@@ -23,15 +23,15 @@ Usage
 
 [Real dynamic-import syntax will force the `.default`](https://github.com/tc39/proposal-dynamic-import/issues/37), but this plugin will omit it.
 
-```bash
-babel index.js --plugins=experimental-syntax-dynamic-import
-```
-
 ```js
 // index.js
 (async () => {
   var assert = await import("assert");
 })();
+```
+
+```bash
+babel index.js --plugins=experimental-syntax-dynamic-import
 ```
 
 becomes:
@@ -44,7 +44,7 @@ becomes:
 
 If you want to do multiple imports using destructuring objects, this plugin doesn't transform anything.
 
-```
+```js
 (async () => {
   var { strictEqual, deepEqual } = await import("assert");
 })();
@@ -52,7 +52,7 @@ If you want to do multiple imports using destructuring objects, this plugin does
 
 becomes(nothing happens):
 
-```
+```js
 (async () => {
   var { strictEqual, deepEqual } = await import("assert");
 })();
