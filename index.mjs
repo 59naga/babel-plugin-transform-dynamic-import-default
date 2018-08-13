@@ -15,13 +15,20 @@ export default ({ template }) => {
         ? url.node.name
         : `"${url.node.value}"`;
 
-      path.get("argument").replaceWith(
-        template(
-          `import(${argument}).then(module => module.default)`,
-          // https://babeljs.io/docs/en/next/babel-template#options
-          { plugins: ["dynamicImport"] }
-        )()
-      );
+      const experimentalDynamicImport = template(
+        `import(${argument}).then(module => module.default)`,
+        // https://babeljs.io/docs/en/next/babel-template#options
+        { plugins: ["dynamicImport"] }
+      )();
+
+      // inherit argument comment (eg /* webpackChunkName: "vue" */)
+      if (url.node.leadingComments) {
+        const arg =
+          experimentalDynamicImport.expression.callee.object.arguments[0];
+        arg.leadingComments = url.node.leadingComments;
+      }
+
+      path.get("argument").replaceWith(experimentalDynamicImport);
     }
   };
 

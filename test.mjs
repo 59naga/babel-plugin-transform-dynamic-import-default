@@ -41,6 +41,20 @@ const trimAsync = code => {
     }
   },
   {
+    describe: "should inherit webpackChunkName",
+    in: `
+      (async () => {
+        const fixture = await import(/* webpackChunkName: "vue" */ 'vue')
+      })()
+    `,
+    out({ code }) {
+      strictEqual(
+        trimAsync(code),
+        `const fixture = await import(\n  /* webpackChunkName: "vue" */\n  "vue").then(module => module.default);`
+      );
+    }
+  },
+  {
     describe: "should be not transform when assign to destructuring objects",
     in: `
       (async () => {
