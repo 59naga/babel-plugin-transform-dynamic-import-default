@@ -1,0 +1,30 @@
+{
+  "name": "babel-plugin-experimental-syntax-dynamic-import",
+  "version": "0.0.0-pre",
+  "description": "plugin of automate default access at dynamic import",
+  "scripts": {
+    "start": "abby format, test --watch \"*.mjs\"",
+    "test": "node --experimental-modules test.mjs",
+    "format": "prettier \"*.mjs\" --write",
+    "build": "babel index.mjs --out-file index.js --plugins=@babel/transform-modules-commonjs",
+    "postversion": "git push --follow-tags && conventional-github-releaser -p atom"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-rc.1",
+    "abigail": "^1.9.5",
+    "eastern": "^0.0.5",
+    "prettier": "^1.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/59naga/babel-plugin-experimental-syntax-dynamic-import.git"
+  },
+  "bugs": {
+    "url": "https://github.com/59naga/babel-plugin-experimental-syntax-dynamic-import/issues"
+  },
+  "homepage": "https://github.com/59naga/babel-plugin-experimental-syntax-dynamic-import#readme",
+  "author": "59naga <i59naga@icloud.com>",
+  "license": "MIT"
+}
