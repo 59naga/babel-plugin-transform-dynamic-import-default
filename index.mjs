@@ -1,4 +1,4 @@
-export default ({ template }) => {
+export default ({ template, types }) => {
   const visitor = {
     AwaitExpression(path) {
       if (path.get("argument.callee.type").node !== "Import") {
@@ -15,20 +15,23 @@ export default ({ template }) => {
         ? url.node.name
         : `"${url.node.value}"`;
 
-      const experimentalDynamicImport = template(
-        `import(${argument}).then(module => module.default)`,
-        // https://babeljs.io/docs/en/next/babel-template#options
-        { plugins: ["dynamicImport"] }
-      )();
+      // https://babeljs.io/docs/en/next/babel-template#options
+      const importExpression = template(`import(${argument})`, {
+        plugins: ["dynamicImport"]
+      })().expression;
 
       // inherit argument comment (eg /* webpackChunkName: "vue" */)
       if (url.node.leadingComments) {
-        const arg =
-          experimentalDynamicImport.expression.callee.object.arguments[0];
+        const arg = importExpression.arguments[0];
         arg.leadingComments = url.node.leadingComments;
       }
 
-      path.get("argument").replaceWith(experimentalDynamicImport);
+      path.replaceWith(
+        types.memberExpression(
+          types.awaitExpression(importExpression),
+          types.identifier("default")
+        )
+      );
     }
   };
 

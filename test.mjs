@@ -22,7 +22,7 @@ const trimAsync = code => {
     out({ code }) {
       strictEqual(
         trimAsync(code),
-        `const fixture = await import("./fixture").then(module => module.default);`
+        `const fixture = (await import("./fixture")).default;`
       );
     }
   },
@@ -36,7 +36,7 @@ const trimAsync = code => {
     out({ code }) {
       strictEqual(
         trimAsync(code),
-        `const fixture = await import(foo).then(module => module.default);`
+        `const fixture = (await import(foo)).default;`
       );
     }
   },
@@ -50,7 +50,7 @@ const trimAsync = code => {
     out({ code }) {
       strictEqual(
         trimAsync(code),
-        `const fixture = await import(\n  /* webpackChunkName: "vue" */\n  "vue").then(module => module.default);`
+        `const fixture = (await import(\n  /* webpackChunkName: "vue" */\n  "vue")).default;`
       );
     }
   },

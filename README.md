@@ -38,7 +38,7 @@ becomes:
 
 ```js
 (async () => {
-  var assert = await import("assert").then(module => module.default);
+  var assert = (await import("assert")).default;
 })();
 ```
 
