@@ -1,7 +1,7 @@
 {
-  "name": "babel-plugin-experimental-syntax-dynamic-import",
+  "name": "babel-plugin-transform-dynamic-import-default",
   "version": "0.0.2",
-  "description": "plugin of automate default access at dynamic import",
+  "description": "Add default to dynamicImport using AwaitExpression",
   "scripts": {
     "start": "abby format, test --watch \"*.mjs\"",
     "test": "node --experimental-modules test.mjs",
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/59naga/babel-plugin-experimental-syntax-dynamic-import.git"
+    "url": "git+https://github.com/59naga/babel-plugin-transform-dynamic-import-default.git"
   },
   "bugs": {
-    "url": "https://github.com/59naga/babel-plugin-experimental-syntax-dynamic-import/issues"
+    "url": "https://github.com/59naga/babel-plugin-transform-dynamic-import-default/issues"
   },
-  "homepage": "https://github.com/59naga/babel-plugin-experimental-syntax-dynamic-import#readme",
+  "homepage": "https://github.com/59naga/babel-plugin-transform-dynamic-import-default#readme",
   "author": "59naga <i59naga@icloud.com>",
   "license": "MIT"
 }

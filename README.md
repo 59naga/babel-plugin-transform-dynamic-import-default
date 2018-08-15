@@ -1,21 +1,21 @@
-Experimental syntax dynamic import
+Transform dynamic import default
 ---
 
 <p align="right">
-  <a href="https://www.npmjs.com/package/babel-plugin-experimental-syntax-dynamic-import">
-    <img alt="Npm version" src="https://badge.fury.io/js/babel-plugin-experimental-syntax-dynamic-import.svg">
+  <a href="https://www.npmjs.com/package/babel-plugin-transform-dynamic-import-default">
+    <img alt="Npm version" src="https://badge.fury.io/js/babel-plugin-transform-dynamic-import-default.svg">
   </a>
-  <a href="https://travis-ci.org/59naga/babel-plugin-experimental-syntax-dynamic-import">
-    <img alt="Build Status" src="https://travis-ci.org/59naga/babel-plugin-experimental-syntax-dynamic-import.svg?branch=master">
+  <a href="https://travis-ci.org/59naga/babel-plugin-transform-dynamic-import-default">
+    <img alt="Build Status" src="https://travis-ci.org/59naga/babel-plugin-transform-dynamic-import-default.svg?branch=master">
   </a>
 </p>
 
-plugin of automate default access at dynamic import.
+Add `.default` to `dynamicImport` using `AwaitExpression`.
 
 Installation
 ---
 ```
-yarn add babel-plugin-experimental-syntax-dynamic-import
+yarn add babel-plugin-transform-dynamic-import-default
 ```
 
 Usage
@@ -31,7 +31,7 @@ Usage
 ```
 
 ```bash
-babel index.js --plugins=experimental-syntax-dynamic-import
+babel index.js --plugins=transform-dynamic-import-default
 ```
 
 becomes:
