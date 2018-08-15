@@ -1,8 +1,11 @@
 sudo: false
+cache: yarn
 language: node_js
+branches:
+  except:
+    - /^v[0-9]/
 node_js:
   - 10
-cache: yarn
 before_deploy:
   - rm .gitignore
   - yarn build
