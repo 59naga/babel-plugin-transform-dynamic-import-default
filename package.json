@@ -4,7 +4,7 @@
   "description": "Add default to dynamicImport using AwaitExpression",
   "scripts": {
     "start": "abby format, test --watch \"*.mjs\"",
-    "test": "node --experimental-modules test.mjs",
+    "test": "node --experimental-modules --no-warnings test.mjs",
     "format": "prettier \"*.mjs\" --write",
     "build": "babel index.mjs --out-file index.js --plugins=@babel/transform-modules-commonjs",
     "postversion": "git push --follow-tags && conventional-github-releaser -p atom"
@@ -17,6 +17,14 @@
     "eastern": "^1.1.1",
     "prettier": "^1.14.2"
   },
+  "keywords": [
+    "babel-plugin",
+    "module.exports",
+    "import",
+    "dynamic import",
+    "default",
+    "webpack"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/59naga/babel-plugin-transform-dynamic-import-default.git"
