@@ -1,6 +1,9 @@
 export default ({ template, types }) => {
   const visitor = {
     AwaitExpression(path) {
+      if (!path.get("argument.callee").node) {
+        return;
+      }
       if (path.get("argument.callee.type").node !== "Import") {
         return;
       }
