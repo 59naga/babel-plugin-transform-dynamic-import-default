@@ -95,6 +95,17 @@ const trimAsync = code => {
         `const fixture = await import("./fixture").then();`
       );
     }
+  },
+  {
+    describe: "should be not transform using Identifier",
+    in: `
+      (async () => {
+        const fixture = await Identifier
+      })()
+    `,
+    out({ code }) {
+      strictEqual(trimAsync(code), `const fixture = await Identifier;`);
+    }
   }
 ].forEach(fixture => {
   spec(fixture.describe, () => {
