@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-dynamic-import-default",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Add default to dynamicImport using AwaitExpression",
   "scripts": {
     "start": "abby format, test --watch \"*.mjs\"",
